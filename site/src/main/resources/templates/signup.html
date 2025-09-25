@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" th:href="@{/style.css}">
+        <title>TrekAri</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <a th:href="@{/}">TrekAri</a>
+            <a th:href="@{/explore}">Explore</a>
+            <a th:href="@{/contact}">Contact</a>
+                <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            <a th:href="@{/signup}" class="split">Sign In</a>
+        </div>
+
+        <h1>Welcome to your future equipment!</h1>
+        <p>Let TrekAri guide your path to adventures.</p>
+    </body>
+</html>
