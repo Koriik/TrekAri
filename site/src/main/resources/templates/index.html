@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" th:href="@{/style.css}">
+        <link rel="stylesheet" th:href="@{/css/style.css}">
         <title>TrekAri</title>
     </head>
     <body>
@@ -17,10 +17,32 @@
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
             </div>
-                <a th:href="@{/signup}" class="split">Sign In</a>
+            <a th:href="@{/signup}" class="split">Sign In</a>
         </div>
-
         <h1>Welcome to your future equipment!</h1>
         <p>Let TrekAri guide your path to adventures.</p>
+        <div class="cards-container">
+            <div class="card">
+                <img src="/images/thermos.jpg" alt="Product Image">
+                <div class="container">
+                    <h3>Product Name</h3>
+                    <p>$0.00</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/images/thermos.jpg" alt="Product Image">
+                <div class="container">
+                    <h3>Product Name</h3>
+                    <p>$0.00</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/images/thermos.jpg" alt="Product Image">
+                <div class="container">
+                    <h3>Product Name</h3>
+                    <p>$0.00</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
