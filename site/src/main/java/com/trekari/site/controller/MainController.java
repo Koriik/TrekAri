@@ -1,4 +1,4 @@
-package com.trekari.site;
+package com.trekari.site.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
