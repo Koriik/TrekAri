@@ -9,7 +9,18 @@
         <div class="topnav">
             <a th:href="@{/}" class="trek">TrekAri</a>
             <div class="midnav">
-                <a th:href="@{/catalog}">Catalog</a>   
+                <div class="dropdown">
+                    <a th:href="@{/catalog}">
+                        <button class="dropbtn">Catalog
+                        <i class="fa fa-caret-down"></i>
+                        </button>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#">Small (carry-ons & add-ons)</a>
+                        <a href="#">Medium (core gear)</a>
+                        <a href="#">Large (base setup)</a>
+                    </div>
+                </div>   
                 <a th:href="@{/contact}">Contact</a>
                     <form action="/action_page.php">
                         <input type="text" placeholder="Search.." name="search">
@@ -18,77 +29,77 @@
             </div>
             <a th:href="@{/signup}" class="split">Sign In</a>
         </div>
-        <h3 class="cardtitles">Small Items</h3>
+        <h3 class="cardtitles">Small (carry-ons & add-ons → “Essentials / Accessories”)</h3>
         <div class="cards-container">
             <div class="card">
                 <img src="/images/thermos.jpg" alt="Product Image">
                 <div class="container">
                     <h3>Product Name</h3>
-                    <p>$0.00</p>
+                    <p><i>Click To View Product</i></p>
                 </div>
             </div>
             <div class="card">
                 <img src="/images/thermos.jpg" alt="Product Image">
                 <div class="container">
                     <h3>Product Name</h3>
-                    <p>$0.00</p>
+                    <p><i>Click To View Product</i></p>
                 </div>
             </div>
             <div class="card">
                 <img src="/images/thermos.jpg" alt="Product Image">
                 <div class="container">
                     <h3>Product Name</h3>
-                    <p>$0.00</p>
+                    <p><i>Click To View Product</i></p>
                 </div>
             </div>
         </div>
         <hr>>
-        <h3 class="cardtitles">Medium Items</h3>
+        <h3 class="cardtitles">Medium (personal equipment → “Core Gear”)</h3>
         <div class="cards-container">
             <div class="card">
                 <img src="/images/thermos.jpg" alt="Product Image">
                 <div class="container">
                     <h3>Product Name</h3>
-                    <p>$0.00</p>
+                    <p><i>Click To View Product</i></p>
                 </div>
             </div>
             <div class="card">
                 <img src="/images/thermos.jpg" alt="Product Image">
                 <div class="container">
                     <h3>Product Name</h3>
-                    <p>$0.00</p>
+                    <p><i>Click To View Product</i></p>
                 </div>
             </div>
             <div class="card">
                 <img src="/images/thermos.jpg" alt="Product Image">
                 <div class="container">
                     <h3>Product Name</h3>
-                    <p>$0.00</p>
+                    <p><i>Click To View Product</i></p>
                 </div>
             </div>
         </div>
         <hr>
-        <h3 class="cardtitles">Large Items</h3>
+        <h3 class="cardtitles">Large (base setup → “Expedition Equipment”)</h3>
         <div class="cards-container">
             <div class="card">
                 <img src="/images/thermos.jpg" alt="Product Image">
                 <div class="container">
                     <h3>Product Name</h3>
-                    <p>$0.00</p>
+                    <p><i>Click To View Product</i></p>
                 </div>
             </div>
             <div class="card">
                 <img src="/images/thermos.jpg" alt="Product Image">
                 <div class="container">
                     <h3>Product Name</h3>
-                    <p>$0.00</p>
+                    <p><i>Click To View Product</i></p>
                 </div>
             </div>
             <div class="card">
                 <img src="/images/thermos.jpg" alt="Product Image">
                 <div class="container">
                     <h3>Product Name</h3>
-                    <p>$0.00</p>
+                    <p><i>Click To View Product</i></p>
                 </div>
             </div>
         </div>
