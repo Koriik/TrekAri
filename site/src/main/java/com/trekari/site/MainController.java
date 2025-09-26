@@ -10,9 +10,9 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/explore")
-    public String explore() {
-        return "explore";
+    @GetMapping("/catalog")
+    public String catalog() {
+        return "catalog";
     }
 
     @GetMapping("/contact")

@@ -7,13 +7,15 @@
     </head>
     <body>
         <div class="topnav">
-            <a th:href="@{/}">TrekAri</a>
-            <a th:href="@{/explore}">Explore</a>
-            <a th:href="@{/contact}">Contact</a>
-                <form action="/action_page.php">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
+            <a th:href="@{/}" class="trek">TrekAri</a>
+            <div class="midnav">
+                <a th:href="@{/catalog}">Catalog</a>
+                <a th:href="@{/contact}">Contact</a>
+                    <form action="/action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+            </div>
             <a th:href="@{/signup}" class="split">Sign In</a>
         </div>
 

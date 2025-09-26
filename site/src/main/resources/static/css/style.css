@@ -7,7 +7,7 @@
   overflow: hidden;
 }
 
-.explore {
+.midnav {
   display: flex;
 }
 
@@ -80,4 +80,9 @@ a.trek {
     height: 250px;        /* fixed height for uniformity */
     object-fit: cover;    /* crop to fill nicely */
     border-radius: 5px 5px 0 0;
+}
+
+footer {
+  background-color: #168a9e;
+  color: white;
 }

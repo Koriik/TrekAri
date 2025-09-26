@@ -8,16 +8,15 @@
     <body>
         <div class="topnav">
             <a th:href="@{/}" class="trek">TrekAri</a>
-            <div class="explore">
-                <a th:href="@{/explore}">Explore</a>
-            
+            <div class="midnav">
+                <a th:href="@{/catalog}">Catalog</a>
                 <a th:href="@{/contact}">Contact</a>
                     <form action="/action_page.php">
                         <input type="text" placeholder="Search.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
             </div>
-                <a th:href="@{/signup}" class="split">Sign In</a>
+            <a th:href="@{/signup}" class="split">Sign In</a>
         </div>
 
         <h1>Check out our equipment!</h1>
