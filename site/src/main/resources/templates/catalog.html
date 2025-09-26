@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" th:href="@{/css/catalog.css}">
         <title>TrekAri</title>
     </head>
     <body>
@@ -28,25 +29,52 @@
         <hr>
         <h3 class="cardtitles">Small (carry-ons & add-ons → “Essentials / Accessories”)</h3>
         <div class="cards-container">
-            <div class="card">
-                <img src="/images/thermos.jpg" alt="Thermos jug">
-                <div class="container">
-                    <h3>Thermos</h3>
-                    <p><i>Click To View Product</i></p>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="/images/thermos.jpg" alt="Thermos jug">
+                        <div class="container">
+                            <h3>Thermos</h3>
+                            <p><i>Hover To View Product</i></p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="/images/knife.jpg" alt="Knife">
-                <div class="container">
-                    <h3>Survival Knife</h3>
-                    <p><i>Click To View Product</i></p>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="/images/knife.jpg" alt="Survial Knife">
+                        <div class="container">
+                            <h3>Survival Knife</h3>
+                            <p><i>Hover To View Product</i></p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="/images/candles.jpg" alt="Camping Candles">
-                <div class="container">
-                    <h3>Candles</h3>
-                    <p><i>Click To View Product</i></p>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="/images/candles.jpg" alt="Survial Knife">
+                        <div class="container">
+                            <h3>Citronella Candles</h3>
+                            <p><i>Hover To View Product</i></p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
                 </div>
             </div>
         </div>
