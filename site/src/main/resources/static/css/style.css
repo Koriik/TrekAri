@@ -1,3 +1,10 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+  }
 /* Create a top navigation bar with a black background color  */
 .topnav {
   display: flex;
@@ -55,7 +62,7 @@ a.trek {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
 }
 .card {
   /* Add shadows to create the "card" effect */
@@ -73,6 +80,7 @@ a.trek {
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
+  background-color: lightgrey;
 }
 
 .card img {
@@ -80,6 +88,12 @@ a.trek {
     height: 250px;        /* fixed height for uniformity */
     object-fit: cover;    /* crop to fill nicely */
     border-radius: 5px 5px 0 0;
+}
+
+.cardtitles {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
 }
 
 footer {
