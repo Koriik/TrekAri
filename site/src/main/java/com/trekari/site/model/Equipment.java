@@ -1,4 +1,7 @@
 package com.trekari.site.model;
+
+import jakarta.persistence.*;
+
 @Entity
 public class Equipment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -9,8 +12,15 @@ public class Equipment {
     private double price;
     private boolean available = true;
 
-    @ManyToOne
-    private User owner;
+    // Constructors
+    public Equipment() {}
+
+    public Equipment(String name, String description, double price) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.available = true;
+    }
 
     public Long getId() {
         return id;
