@@ -11,12 +11,12 @@ h1, h2, h3 {
 form {
   margin-left: 5px;
 }
+
 /* Create a top navigation bar with a black background color  */
 .topnav {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #168a9e;
   overflow: hidden;
 }
 
@@ -26,7 +26,7 @@ form {
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  color: #f2f2f2;
+  color: #6b6b6b;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -35,6 +35,7 @@ form {
 
 a.trek {
   font-size: 30px;
+  color: black;
 }
 
 /* Change the color of links on hover */
@@ -46,7 +47,6 @@ a.trek {
 /* Style the search box inside the navigation bar */
 .topnav input[type=text] {
   padding: 6px;
-  border: none;
   border-radius: 40px 40px 40px 40px;
   margin-top: 8px;
   font-size: 17px;
@@ -102,7 +102,7 @@ a.trek {
 footer {
   padding: 20px;
   text-align: center;
-  background-color: #168a9e;
+  background-color: #444444;
   color: white;
 }
 
@@ -111,7 +111,7 @@ footer {
   font-size: 16px;
   border: none;
   outline: none;
-  color: white;
+  color: #6b6b6b;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
@@ -155,4 +155,36 @@ footer {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.hero {
+  background: url('/images/mountains.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4); /* dark overlay for readability */
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-btn {
+  padding: 10px 20px;
+  background: #168a9e;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
 }
