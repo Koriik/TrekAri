@@ -10,17 +10,13 @@
             <a th:href="@{/}" class="trek">TrekAri</a>
             <div class="midnav">
                 <div class="dropdown">
-                    <a th:href="@{/catalog}">
-                        <button class="dropbtn">Catalog
-                        <i class="fa fa-caret-down"></i>
-                        </button>
-                    </a>
+                <a href="/catalog" class="dropbtn">Catalog <i class="fa fa-caret-down"></i></a>
                     <div class="dropdown-content">
                         <a href="#">Small (carry-ons & add-ons)</a>
                         <a href="#">Medium (core gear)</a>
                         <a href="#">Large (base setup)</a>
                     </div>
-                </div>   
+                </div>    
                 <a th:href="@{/contact}">Contact</a>
                     <form action="/action_page.php">
                         <input type="text" placeholder="Search.." name="search">
