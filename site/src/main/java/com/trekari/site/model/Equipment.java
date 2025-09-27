@@ -61,6 +61,4 @@ public class Equipment {
     public void setAvailable(boolean available) {
         this.available = available;
     }
-
-    // getters & setters
 }
