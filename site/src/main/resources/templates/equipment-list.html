@@ -5,7 +5,26 @@
     <title>Equipment List</title>
 </head>
 <body>
-<h1>Available Equipment</h1>
-
+    <h1>Database Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Available</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${equipmentList}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.available}"></td>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.description}"></td>
+                <td th:text="${item.price}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
