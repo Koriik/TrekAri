@@ -23,6 +23,9 @@ public class CartController {
 
     @GetMapping
     public String viewCart(@AuthenticationPrincipal UserDetails userDetails, Model model) {
+        if (userDetails == null) {
+            return "redirect:/login";
+        }
         User user = userRepository.findByUsername(userDetails.getUsername());
         model.addAttribute("cart", cartService.getCartForUser(user));
         return "cart";
@@ -32,6 +35,9 @@ public class CartController {
     public String addToCart(@AuthenticationPrincipal UserDetails userDetails,
                             @RequestParam Long id,
                             @RequestParam(defaultValue = "1") int quantity) {
+                                if (userDetails == null) {
+                                    return "redirect:/login";
+                                }
         User user = userRepository.findByUsername(userDetails.getUsername());
         cartService.addItem(user, id, quantity);
         return "redirect:/cart";
@@ -40,6 +46,9 @@ public class CartController {
     @PostMapping("/remove")
     public String removeFromCart(@AuthenticationPrincipal UserDetails userDetails,
                                  @RequestParam Long id) {
+                                    if (userDetails == null) {
+                                        return "redirect:/login";
+                                    }
         User user = userRepository.findByUsername(userDetails.getUsername());
         cartService.removeItem(user, id);
         return "redirect:/cart";

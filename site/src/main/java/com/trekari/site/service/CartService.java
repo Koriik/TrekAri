@@ -53,9 +53,17 @@ public class CartService {
         cartRepo.save(cart);
     }
 
-    public void removeItem(User user, Long equipmentId) {
+    @Transactional
+    public void removeItem(User user, Long cartItemId) {
         Cart cart = getCartForUser(user);
-        cart.getItems().removeIf(i -> i.getEquipment().getId().equals(equipmentId));
-        cartRepo.save(cart);
+        CartItem itemToRemove = cart.getItems().stream()
+                                    .filter(i -> i.getId().equals(cartItemId))
+                                    .findFirst()
+                                    .orElse(null);
+        if (itemToRemove != null) {
+            cart.getItems().remove(itemToRemove);
+            itemRepo.delete(itemToRemove); // ensure it is removed from DB
+        }
     }
+
 }
