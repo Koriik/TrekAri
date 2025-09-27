@@ -10,15 +10,17 @@ public class Equipment {
     private String name;
     private String description;
     private double price;
+    private int amount;
     private boolean available = true;
 
     // Constructors
     public Equipment() {}
 
-    public Equipment(String name, String description, double price) {
+    public Equipment(String name, String description, double price, int amount) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.amount = amount;
         this.available = true;
     }
 
@@ -52,6 +54,14 @@ public class Equipment {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public boolean isAvailable() {
