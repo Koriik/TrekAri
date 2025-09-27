@@ -19,5 +19,48 @@ public class CartItem {
 
     private int quantity;
 
+    public CartItem() {
+
+    }
+
+    public CartItem(Long id, Cart cart, Equipment equipment, int quantity) {
+        this.id = id;
+        this.cart = cart;
+        this.equipment = equipment;
+        this.quantity = quantity;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     // Getters and setters
 }
