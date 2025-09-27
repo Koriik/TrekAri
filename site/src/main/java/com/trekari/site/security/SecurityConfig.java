@@ -1,5 +1,6 @@
 package com.trekari.site.security;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,7 +33,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/signup", "/equipment/**", "/css/**", "/js/**").permitAll()
+                .requestMatchers("/", "/signup", "/equipment/**", "/css/**", "/js/**", "/images/**").permitAll()
                 .anyRequest().authenticated() // all other pages require login
             )
             .formLogin(form -> form

@@ -24,6 +24,9 @@
                     </form>
             </div>
             <a th:href="@{/signup}" class="split">Login/Sign Up</a>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit">Logout</button>
+            </form>
         </div>
         <hr>
         <div class="hero">
