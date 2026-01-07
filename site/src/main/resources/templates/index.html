@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" th:href="@{/css/style.css}">
@@ -23,9 +24,11 @@
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
             </div>
-            <a th:href="@{/signup}" class="split">Login/Sign Up</a>
-            <form th:action="@{/logout}" method="post">
-                <button type="submit">Logout</button>
+            <a th:href="@{/login}" class="split" sec:authorize="isAnonymous()">
+                Login
+            </a>
+            <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+                <button type="submit" class="split">Logout</button>
             </form>
         </div>
         <hr>
