@@ -23,7 +23,12 @@
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
             </div>
-            <a th:href="@{/signup}" class="split">Login/Sign Up</a>
+            <a th:href="@{/login}" class="split" sec:authorize="isAnonymous()">
+                Login
+            </a>
+            <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+                <button type="submit" class="split">Logout</button>
+            </form>
         </div>
         <hr>
 
