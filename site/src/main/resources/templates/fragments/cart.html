@@ -1,10 +1,10 @@
-<div th:fragment="cart">
-    <ul class="cart-items">
-        <li th:each="cartItem : ${cartItems}">
-            <span th:text="${cartItem.equipment.name}"></span> -
-            <span th:text="${cartItem.quantity}"></span>
-            <button th:attr="data-id=${cartItem.equipment.id}" class="remove-btn">Remove</button>
-        </li>
-    </ul>
-    <div th:if="${#lists.isEmpty(cartItems)}">Cart is empty</div>
-</div>
+<!-- fragments/cart.html -->
+<ul class="cart-items" th:fragment="cart">
+    <li th:each="cartItem : ${cartItems}">
+        <span th:text="${cartItem.equipment.name}"></span> -
+        <span th:text="${cartItem.quantity}"></span>
+        <button class="remove-btn" type="button" th:data-id="${cartItem.id}">Remove</button>
+    </li>
+</ul>
+
+<div th:if="${#lists.isEmpty(cartItems)}">Cart is empty</div>
