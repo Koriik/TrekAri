@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
+        <meta name="_csrf" th:content="${_csrf.token}"/>
+        <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" th:href="@{/css/style.css}">
         <link rel="stylesheet" th:href="@{/css/catalog.css}">
@@ -30,6 +32,11 @@
             <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
                 <button type="submit" class="split">Logout</button>
             </form>
+
+            <button id="cartBtn" class="cart-btn">
+                <i class="fa fa-shopping-cart"></i>
+            </button>
+
         </div>
         <hr id="small">
         <h3 class="cardtitles">Small (carry-ons & add-ons → “Essentials / Accessories”)</h3>
@@ -43,16 +50,13 @@
                             <p><i>Hover To View Product</i></p>
                         </div>
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back" data-id="1">
                         <h1>Thermos</h1>
                         <p>Want to keep your drink hot or cold all day?</p>
                         <p>Price: $19.99</p>
 
-                        <form th:action="@{/cart/add}" method="post">
-                            <input type="hidden" name="id" value="1" />
-                            <input type="number" name="quantity" value="1" min="1"/>
-                            <button type="submit">Add to Cart</button>
-                        </form>
+                        <input type="number" value="1" min="1" style="width:50px;">
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -65,16 +69,13 @@
                             <p><i>Hover To View Product</i></p>
                         </div>
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back" data-id="2">
                         <h1>Survival Knife</h1>
                         <p>It can slice, chop & saw!</p>
                         <p>Price: $14.99</p>
 
-                        <form th:action="@{/cart/add}" method="post">
-                            <input type="hidden" name="id" value="2" />
-                            <input type="number" name="quantity" value="1" min="1"/>
-                            <button type="submit">Add to Cart</button>
-                        </form>
+                        <input type="number" value="1" min="1" style="width:50px;">
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -87,16 +88,13 @@
                             <p><i>Hover To View Product</i></p>
                         </div>
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back" data-id="3">
                         <h1>Citronella Candle</h1>
                         <p>Burn one of these to help keep mosquitos at bay</p>
                         <p>Price: $10.00</p>
 
-                        <form th:action="@{/cart/add}" method="post">
-                            <input type="hidden" name="id" value="3" />
-                            <input type="number" name="quantity" value="1" min="1"/>
-                            <button type="submit">Add to Cart</button>
-                        </form>
+                        <input type="number" value="1" min="1" style="width:50px;">
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -113,16 +111,13 @@
                             <p><i>Hover To View Product</i></p>
                         </div>
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back" data-id="4">
                         <h1>Medium Tent</h1>
                         <p>This tent can hold up to 2 people with all of your supplies</p>
                         <p>Price $29.99</p>
 
-                        <form th:action="@{/cart/add}" method="post">
-                            <input type="hidden" name="id" value="4" />
-                            <input type="number" name="quantity" value="1" min="1"/>
-                            <button type="submit">Add to Cart</button>
-                        </form>
+                        <input type="number" value="1" min="1" style="width:50px;">
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -135,17 +130,14 @@
                             <p><i>Hover To View Product</i></p>
                         </div>
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back" data-id="5">
                         <h1>Sleeping Bags</h1>
                         <p>Crafted with the heat and cold in mind!</p>
                         <p>Can keep you cool upwards of 80f and will keep you warm down to -20f</p>
                         <p>Price: $18.99</p>
 
-                        <form th:action="@{/cart/add}" method="post">
-                            <input type="hidden" name="id" value="5" />
-                            <input type="number" name="quantity" value="1" min="1"/>
-                            <button type="submit">Add to Cart</button>
-                        </form>
+                        <input type="number" value="1" min="1" style="width:50px;">
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -158,16 +150,13 @@
                             <p><i>Hover To View Product</i></p>
                         </div>
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back" data-id="6">
                         <h1>Camping Pack</h1>
                         <p>These have lightweight aluminum metal braces to help with maximising weight</p>
                         <p>Price: $40.99</p>
 
-                        <form th:action="@{/cart/add}" method="post">
-                            <input type="hidden" name="id" value="6" />
-                            <input type="number" name="quantity" value="1" min="1"/>
-                            <button type="submit">Add to Cart</button>
-                        </form>
+                        <input type="number" value="1" min="1" style="width:50px;">
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -184,16 +173,13 @@
                             <p><i>Hover To View Product</i></p>
                         </div>
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back" data-id="7">
                         <h1>Camping Stove</h1>
                         <p>Wake up early and make breakfast and coffee!</p>
                         <p>Price: $50.00</p>
 
-                        <form th:action="@{/cart/add}" method="post">
-                            <input type="hidden" name="id" value="7" />
-                            <input type="number" name="quantity" value="1" min="1"/>
-                            <button type="submit">Add to Cart</button>
-                        </form>
+                        <input type="number" value="1" min="1" style="width:50px;">
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -206,16 +192,13 @@
                             <p><i>Hover To View Product</i></p>
                         </div>
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back" data-id="8">
                         <h1>Axes</h1>
                         <p>This axe will be the one to get you that extra fire wood, to keep the night going</p>
                         <p>Price: $15.99</p>
 
-                        <form th:action="@{/cart/add}" method="post">
-                            <input type="hidden" name="id" value="8" />
-                            <input type="number" name="quantity" value="1" min="1"/>
-                            <button type="submit">Add to Cart</button>
-                        </form>
+                        <input type="number" value="1" min="1" style="width:50px;">
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -228,23 +211,39 @@
                             <p><i>Hover To View Product</i></p>
                         </div>
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back" data-id="9">
                         <h1>Coolers</h1>
                         <p>Need to bring multiple drinks and snacks, this should do the trick.</p>
                         <p>Price: $17.99</p>
 
-                        <form th:action="@{/cart/add}" method="post">
-                            <input type="hidden" name="id" value="9" />
-                            <input type="number" name="quantity" value="1" min="1"/>
-                            <button type="submit">Add to Cart</button>
-                        </form>
+                        <input type="number" value="1" min="1" style="width:50px;">
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <button id="cartBtn" class="cart-btn">
+            <i class="fa fa-shopping-cart"></i>
+        </button>
+
+        <div id="sideCart" class="side-cart">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button id="closeCart">&times;</button>
+            </div>
+
+            <div class="cart-items">
+                <!-- cart fragment loads here -->
+            </div>
+        </div>
+
+        <div id="cartOverlay" class="cart-overlay"></div>
+
         <footer>
             <p>Created by Koriik</p>
             <p>If you have any question use the contact page</p>
         </footer>
+        <script th:src="@{/js/cart.js}" defer></script>
     </body>
 </html>
