@@ -134,6 +134,29 @@ footer {
   color: white;
 }
 
+.contact-form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
 /* Dropdown button */
 .dropdown .dropbtn {
   font-size: 16px;

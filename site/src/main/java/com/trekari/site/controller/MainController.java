@@ -44,11 +44,6 @@ public class MainController {
         return "catalog";
     }
 
-    @GetMapping("/contact")
-    public String contact() {
-        return "contact";
-    }
-
     @GetMapping("/login")
     public String login() {
         return "login";
