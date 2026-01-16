@@ -3,25 +3,28 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" th:href="@{/css/signup.css}">
         <title>TrekAri</title>
     </head>
     <body>
         <div class="topnav">
             <a th:href="@{/}" class="trek"><b>TrekAri</b></a>
-            <div class="midnav">
-                <a th:href="@{/catalog}">Catalog</a>
-                <a th:href="@{/contact}">Contact</a>
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-            </div>
-            <a th:href="@{/signup}" class="split">Sign In</a>
         </div>
-        <form th:action="@{/signup}" method="post">
-            <input type="text" name="username" placeholder="Username" required/>
-            <input type="password" name="password" placeholder="Password" required/>
-            <button type="submit">Sign Up</button>
-        </form>
+        <div class="signupcontainer">
+            <form class="myform" th:action="@{/signup}" method="post">
+                <h1>Sign Up</h1>
+                <div>
+                    <label for="username" placeholder="Username">Username:</label>
+                    <input type="text" id="username" name="username" required />
+                </div>
+                <div>
+                    <label for="password" placeholder="Password">Password:</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+                <div>
+                    <button class="lgnbttn" type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>

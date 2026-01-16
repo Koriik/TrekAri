@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
 </head>
 <body>
-    <h1>Login</h1>
-
-    <form th:action="@{/login}" method="post">
+    <div class="topnav">
+        <a th:href="@{/}" class="trek"><b>TrekAri</b></a>
+    </div>
+    <div class="loginContainer">
         <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required />
+            <form class="myform" th:action="@{/login}" method="post">
+                <h1>Login</h1>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required />
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+                <div>
+                    <button class="lgnbttn" type="submit">Login</button>
+                </div>
+                <p>Don't have an account? <a th:href="@{/signup}">Sign up here</a>.</p>
+            </form>
         </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required />
-        </div>
-        <div>
-            <button type="submit">Login</button>
-        </div>
-    </form>
-
-    <p>Don't have an account? <a th:href="@{/signup}">Sign up here</a>.</p>
+    </div>
 </body>
 </html>
