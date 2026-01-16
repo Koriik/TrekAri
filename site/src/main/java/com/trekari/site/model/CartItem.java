@@ -18,16 +18,18 @@ public class CartItem {
     private Equipment equipment;
 
     private int quantity;
+    private Double price;
 
     public CartItem() {
 
     }
 
-    public CartItem(Long id, Cart cart, Equipment equipment, int quantity) {
+    public CartItem(Long id, Cart cart, Equipment equipment, int quantity, double price) {
         this.id = id;
         this.cart = cart;
         this.equipment = equipment;
         this.quantity = quantity;
+        this.price = price;
     }
 
     public Long getId() {
@@ -60,5 +62,13 @@ public class CartItem {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

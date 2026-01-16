@@ -49,6 +49,7 @@ public class CartService {
             item.setCart(cart);
             item.setEquipment(eq);
             item.setQuantity(quantity);
+            item.setPrice(eq.getPrice());
             cart.getItems().add(item);
         }
         cartRepo.save(cart);
