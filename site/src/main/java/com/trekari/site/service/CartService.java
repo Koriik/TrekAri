@@ -35,6 +35,7 @@ public class CartService {
     }
 
     public void addItem(User user, Long equipmentId, int quantity) {
+        if (equipmentId == null) throw new IllegalArgumentException("equipmentId cannot be null");
         Cart cart = getCartForUser(user);
         Equipment eq = equipmentRepo.findById(equipmentId).orElseThrow();
         // check if item already exists in cart

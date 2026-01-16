@@ -33,6 +33,7 @@ public class MainController {
     // Equipment detail page
     @GetMapping("/equipment/{id}")
     public String equipmentDetail(@PathVariable Long id, Model model) {
+        if (id == null) throw new IllegalArgumentException("id cannot be null");
         Equipment eq = repo.findById(id).orElseThrow();
         model.addAttribute("equipment", eq);
         return "equipment-detail"; // template showing single equipment

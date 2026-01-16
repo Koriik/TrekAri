@@ -3,21 +3,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const token = document.querySelector('meta[name="_csrf"]').content;
     const header = document.querySelector('meta[name="_csrf_header"]').content;
 
-    // Update cart fragment function
     async function updateCartFragment() {
         try {
             const res = await fetch("/cart/fragment", {
-                headers: {
-                    "X-Requested-With": "XMLHttpRequest"
-                }
+                headers: { "X-Requested-With": "XMLHttpRequest" }
             });
+
+            if (res.status === 401) {
+                document.querySelector("#sideCart").innerHTML =
+                    "<p class='cart-empty'>Login to view cart</p>";
+                return;
+            }
+
             if (!res.ok) throw new Error("Failed to fetch cart fragment");
+
             const html = await res.text();
-            document.querySelector("#sideCart .cart-items").innerHTML = html;
+            document.querySelector("#sideCart").innerHTML = html;
+
         } catch (err) {
             console.error(err);
         }
     }
+
 
     // Immediately fetch cart on page load
     updateCartFragment(); // <-- ADD THIS
@@ -32,11 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     [header]: token
                 }
             });
+
+            if (res.status === 401) {
+                // User not logged in → redirect to login page
+                window.location.href = "/login";
+                return;
+            }
+
             if (!res.ok) throw new Error("Failed to add item");
-            await updateCartFragment();
-        } catch (err) {
-            console.error(err);
-        }
+                await updateCartFragment();
+            } catch (err) {
+                console.error(err);
+            }
     }
 
     // Remove item from cart
