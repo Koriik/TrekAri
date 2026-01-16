@@ -94,8 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("cartOverlay").classList.add("active");
     });
 
-    document.getElementById("closeCart").addEventListener("click", () => {
-        document.getElementById("sideCart").classList.remove("open");
-        document.getElementById("cartOverlay").classList.remove("active");
+    document.querySelector("#sideCart").addEventListener("click", e => {
+        if (e.target.id === "closeCart") {
+            document.getElementById("sideCart").classList.remove("open");
+            document.getElementById("cartOverlay").classList.remove("active");
+        }
     });
+
 });
